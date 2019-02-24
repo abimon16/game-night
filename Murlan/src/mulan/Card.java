@@ -8,7 +8,7 @@ public class Card {
 	
 	public Card(int val, String newSuit) {
 		setValue(val);
-		newSuit = suit;
+		suit = newSuit;
 	}
 
 	public int getValue() {
@@ -27,4 +27,8 @@ public class Card {
 		suit = newSuit;
 	}
 	
+	@Override
+	public String toString() {
+		return String.format(value + " of "+ suit);
+	}
 }

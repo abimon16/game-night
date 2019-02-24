@@ -30,8 +30,18 @@ public class Deck {
 		deck.add(new Card(18, "Red"));
 	}
 	
+	public void shuffleDeck() {
+		Collections.shuffle(deck);
+	}
+	
 	public void clearDeck() {
 		deck.clear();
+	}
+	
+	public void printDeck() {
+		for(int i = 0; i < deck.size(); i++) {
+			System.out.println(i + ": " +deck.get(i).toString());
+		}
 	}
 		
 }
