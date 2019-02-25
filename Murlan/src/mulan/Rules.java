@@ -13,6 +13,9 @@ public class Rules
 	}
 	
 	public boolean isValid(ArrayList<Card> currentCards, ArrayList<Card> attemptedPlay) {
+		if(isPass(attemptedPlay)) {
+			return true;
+		}
 		if(!isSameSize(currentCards, attemptedPlay)) {
 			return false;
 		}//TODO: add case of BOMB and COLOR
@@ -26,6 +29,13 @@ public class Rules
 		}
 		
 		return true;
+	}
+	
+	public boolean isPass(ArrayList<Card> attemptedPlay) {
+		if(attemptedPlay.size() == 1 && attemptedPlay.get(0).getValue() == 0) {//played "pass"
+			return true;
+		}
+		return false;
 	}
 	
 	public boolean isBomb(ArrayList<Card> cards) {

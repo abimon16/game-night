@@ -1,6 +1,7 @@
 package mulan;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Player 
 {
@@ -8,14 +9,17 @@ public class Player
 	
 	public Player() {
 		hand = new ArrayList<Card>();
+		hand.add(new Card(0,"Pass"));
 	}
 	
 	public Player(ArrayList<Card> newHand) {
 		hand = newHand;
+		hand.add(0, new Card(0, "Pass"));
 	}
 
 	public void setHand(ArrayList<Card> newHand) {
 		hand= newHand;
+		hand.add(0, new Card(0, "Pass"));
 	}
 	
 	public ArrayList<Card> getHand(){
